@@ -6,13 +6,13 @@ services:
     environment:
       - POSTGRES_PASSWORD=${DB_PASSWORD}
     ports:
-      - 5544:5432
+      - 5566:5432
     restart: always
   auth:
     container_name: my-group-auth
     image: fusionauth/fusionauth-app:latest
     ports:
-      - 9100:9100
+      - 9011:9011
     environment:
       - DATABASE_URL=jdbc:postgresql://db:5432/postgres
       - DATABASE_USERNAME=postgres
